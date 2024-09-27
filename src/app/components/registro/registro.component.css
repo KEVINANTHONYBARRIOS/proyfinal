@@ -1,0 +1,137 @@
+/* Asegurar que el fondo cubra toda la pantalla */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que ocupe toda la altura */
+  overflow: hidden; /* Evita el desplazamiento */
+}
+
+/* Fondo animado */
+.animated-background {
+  position: fixed; /* Asegura que el fondo esté fijo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #00064f, #79930b);
+  background-size: 300% 300%;
+  animation: mover 9s ease-in-out infinite;
+  z-index: -1; /* Coloca el fondo detrás de otros elementos */
+}
+
+/* Animación del fondo */
+@keyframes mover {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fondo elegante para el formulario de registro */
+.register-card {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente y sutil */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  padding: 40px; /* Ajustar el padding */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde suave y transparente */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+  border-radius: 12px; /* Bordes redondeados */
+  max-width: 380px; /* Ajustar el ancho máximo de la tarjeta */
+  width: 90%; /* Permitir que la tarjeta ocupe un porcentaje del ancho de la pantalla */
+  text-align: center;
+  color: #ffffff; /* Cambiar a blanco para que resalte sobre el fondo */
+  position: absolute; /* Cambiado a absolute para mejor centrado */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajustar el desplazamiento para centrar */
+  animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo elegante para los textos */
+.color1-text {
+  color: #ffffff; /* Cambiar a blanco para que resalte sobre el fondo */
+  font-size: 1.2rem; /* Ajustar el tamaño de texto */
+}
+
+/* Estilo para grupos de formularios */
+.form-group {
+  margin-bottom: 15px; /* Reducir el margen inferior */
+}
+
+/* Estilo para los campos de formulario */
+.form-control {
+  width: 100%;
+  padding: 12px; /* Ajustar el padding */
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más visible para el input */
+  color: #fff; /* Color de texto blanco */
+  font-size: 1rem; /* Ajustar el tamaño de la fuente */
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Estilo para los mensajes de error */
+.error {
+  color: rgb(181, 46, 46);
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Estilos del botón de registro */
+.btn-primary {
+  background-color: rgb(181, 46, 46);
+  border: none;
+  padding: 12px 40px; /* Ajustar el tamaño del botón */
+  font-size: 1.1rem; /* Ajustar el tamaño del texto del botón */
+  border-radius: 30px; /* Bordes más redondeados para elegancia */
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(181, 46, 46);
+  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.4);
+  color: #fff;
+}
+
+/* Estilos del botón de enlace "¿Ya tienes cuenta?" */
+.btn-link {
+  color: rgb(255, 0, 0);
+  font-size: 0.9rem; /* Ajustar el tamaño de la fuente */
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.btn-link:hover {
+  color: rgb(181, 46, 46);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Espaciado */
+.mt-3 {
+  margin-top: 1rem; /* Ajustar el margen superior */
+}

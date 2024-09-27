@@ -1,0 +1,91 @@
+<div class="container mt-5">
+  <div class="welcome-container">
+    <h2 class="mb-4">Administrar Usuarios</h2>
+    <!-- Botón de Logout en la parte superior derecha -->
+    <div class="logout-button">
+      <button (click)="logout()">Logout</button>
+    </div>
+
+    <!-- Contenido de bienvenida -->
+    <h1>¡Bienvenido(a) a la aplicación Admin!</h1>
+    <p>Lista de todos los usuarios de la aplicación</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Email</th>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.name }}</td>
+        <td>
+          <select
+            class="form-control"
+            [(ngModel)]="user.rol"
+            (change)="changeRole(user.id, user.rol)"
+          >
+            <option value="cliente">Cliente</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="editUser(user)">
+            Editar
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Formulario de Edición -->
+  <div *ngIf="selectedUser" class="mt-4">
+    <h4>Editar Usuario</h4>
+    <form (ngSubmit)="saveUser()">
+      <div class="form-group">
+        <label>Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="selectedUser.email"
+          name="email"
+          required
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="selectedUser.name"
+          name="nombre"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label>Rol:</label>
+        <select class="form-control" [(ngModel)]="selectedUser.rol" name="role">
+          <option value="cliente">Cliente</option>
+          <option value="admin">Administrador</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Guardar Cambios</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="selectedUser = null"
+      >
+        Cancelar
+      </button>
+    </form>
+  </div>
+</div>
